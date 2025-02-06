@@ -9,16 +9,34 @@ const meta: Meta<typeof ProductList> = {
   args: {
     products: [
       {
-        name: "The Storytellers Kit – Daniel Schaefer",
-        price: "$49.99",
-        image: "https://source.unsplash.com/50x50/?product",
-        date: "November 3, 2014",
+        id: 1,
+        title: "Avenger 82 Skis",
+        price: "499.00",
+        compareAtPrice: "699.99",
+        stock: 10,
+        image: "https://source.unsplash.com/100x100/?ski",
+        vendor: "Nordica",
+        productType: "Skis",
       },
       {
-        name: "The Clock of Life in Street Photography",
-        price: "$39.99",
-        image: "https://source.unsplash.com/50x50/?camera",
-        date: "June 12, 2004",
+        id: 2,
+        title: "Speedmachine 100 Boots",
+        price: "299.00",
+        compareAtPrice: undefined,
+        stock: 5,
+        image: "https://source.unsplash.com/100x100/?boots",
+        vendor: "Nordica",
+        productType: "Ski Boots",
+      },
+      {
+        id: 3,
+        title: "Elite Goggles",
+        price: "99.00",
+        compareAtPrice: "129.99",
+        stock: 0,
+        image: "https://source.unsplash.com/100x100/?goggles",
+        vendor: "Oakley",
+        productType: "Goggles",
       },
     ],
   },
@@ -28,3 +46,8 @@ export default meta;
 type Story = StoryObj<typeof ProductList>;
 
 export const Default: Story = {};
+export const EmptyList: Story = {
+  args: {
+    products: [],
+  },
+};

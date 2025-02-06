@@ -4,27 +4,27 @@ import React from "react";
 import styles from "./ProductListItem.module.scss";
 
 const ProductListItem = ({
-  name,
+  title,
   price,
+  stock,
   image,
-  date,
-  onClick,
+  vendor,
+  productType,
 }: IProductListItem) => {
   return (
-    <div className={styles["product-list-item"]} onClick={onClick}>
-      <Image
-        src={image}
-        alt={name}
-        width={50}
-        height={50}
-        className={styles["product-list-item__image"]}
-      />
+    <div className={styles["product-list-item"]}>
+      <div className={styles["product-list-item__image-container"]}>
+        <Image src={image} alt={title} width={100} height={100} />
+      </div>
       <div className={styles["product-list-item__content"]}>
-        <span className={styles["product-list-item__name"]}>{name}</span>
-        <span className={styles["product-list-item__details"]}>
-          <span>{price}</span>
-          {date && <span>{date}</span>}
-        </span>
+        <h3 className={styles["product-list-item__title"]}>{title}</h3>
+        <p className={styles["product-list-item__vendor"]}>
+          {vendor} - {productType}
+        </p>
+        <p className={styles["product-list-item__price"]}>
+          <span>${price}</span>
+        </p>
+        <p className={styles["product-list-item__stock"]}>Stock: {stock}</p>
       </div>
     </div>
   );

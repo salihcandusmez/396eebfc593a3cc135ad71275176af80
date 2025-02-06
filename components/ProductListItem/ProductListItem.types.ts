@@ -1,7 +1,10 @@
 export interface IProductListItem {
-  name: string;
+  id: number;
+  title: string;
   price: string;
+  stock: number;
   image: string;
-  date?: string;
+  vendor: string;
+  productType: string;
   onClick?: () => void;
 }

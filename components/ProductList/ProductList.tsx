@@ -1,14 +1,18 @@
-import { IProductList } from "./ProductList.types";
+import { IProductListItem } from "../ProductListItem/ProductListItem.types";
 import ProductListItem from "../ProductListItem/ProductListItem";
 import React from "react";
 import styles from "./ProductList.module.scss";
 
-const ProductList = ({ products }: IProductList) => {
+const ProductList = ({ products }: { products: IProductListItem[] }) => {
   return (
     <div className={styles["product-list"]}>
-      {products.map((product) => (
-        <ProductListItem key={product.name} {...product} />
-      ))}
+      {products.length > 0 ? (
+        products.map((product) => (
+          <ProductListItem key={product.id} {...product} />
+        ))
+      ) : (
+        <p>No products found.</p>
+      )}
     </div>
   );
 };

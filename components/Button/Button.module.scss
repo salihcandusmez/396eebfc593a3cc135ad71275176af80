@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // 🎨 Renk Değişkenleri
 $primary-bg: #000000;
 $primary-text: #ffffff;
@@ -39,7 +41,7 @@ $font-size-mobile: 16px; // 📱 Mobilde daha küçük olacak
     color: $primary-text;
 
     &:hover {
-      background-color: darken($primary-bg, 10%);
+      background-color: color.adjust($primary-bg, $lightness: -10%);
     }
   }
 
@@ -49,7 +51,7 @@ $font-size-mobile: 16px; // 📱 Mobilde daha küçük olacak
     border: 2px solid $primary-bg;
 
     &:hover {
-      background-color: darken($secondary-bg, 5%);
+      background-color: color.adjust($secondary-bg, $lightness: -5%);
     }
   }
 
@@ -58,7 +60,7 @@ $font-size-mobile: 16px; // 📱 Mobilde daha küçük olacak
     color: $danger-text;
 
     &:hover {
-      background-color: darken($danger-bg, 10%);
+      background-color: color.adjust($danger-bg, $lightness: -10%);
     }
   }
 
@@ -67,7 +69,7 @@ $font-size-mobile: 16px; // 📱 Mobilde daha küçük olacak
     color: $success-text;
 
     &:hover {
-      background-color: darken($success-bg, 10%);
+      background-color: color.adjust($success-bg, $lightness: -10%);
     }
   }
 }

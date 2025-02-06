@@ -1,3 +1,5 @@
+"use client";
+
 import { FiSearch } from "react-icons/fi";
 import { ISearchInput } from "./SearchInput.types";
 import React from "react";
