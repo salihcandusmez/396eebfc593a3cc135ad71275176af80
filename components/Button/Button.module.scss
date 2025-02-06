@@ -1,0 +1,73 @@
+// 🎨 Renk Değişkenleri
+$primary-bg: #000000;
+$primary-text: #ffffff;
+
+$secondary-bg: #ffffff;
+$secondary-text: #000000;
+
+$danger-bg: #ff4d4d;
+$danger-text: #ffffff;
+
+$success-bg: #28a745;
+$success-text: #ffffff;
+
+// 📏 Boyut ve Padding Ayarları
+$padding: 12px 24px;
+$border-radius: 16px;
+$font-size-desktop: 20px;
+$font-size-mobile: 16px; // 📱 Mobilde daha küçük olacak
+
+// 🎨 Buton Stilleri
+.button {
+  display: inline-block;
+  padding: $padding;
+  border-radius: $border-radius;
+  font-size: $font-size-desktop; // Varsayılan olarak büyük font
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+
+  @media (max-width: 768px) {
+    font-size: $font-size-mobile; // 📱 Mobilde daha küçük font boyutu
+    padding: 10px 20px; // Buton paddingi de küçülüyor
+  }
+
+  &--primary {
+    background-color: $primary-bg;
+    color: $primary-text;
+
+    &:hover {
+      background-color: darken($primary-bg, 10%);
+    }
+  }
+
+  &--secondary {
+    background-color: $secondary-bg;
+    color: $secondary-text;
+    border: 2px solid $primary-bg;
+
+    &:hover {
+      background-color: darken($secondary-bg, 5%);
+    }
+  }
+
+  &--danger {
+    background-color: $danger-bg;
+    color: $danger-text;
+
+    &:hover {
+      background-color: darken($danger-bg, 10%);
+    }
+  }
+
+  &--success {
+    background-color: $success-bg;
+    color: $success-text;
+
+    &:hover {
+      background-color: darken($success-bg, 10%);
+    }
+  }
+}
