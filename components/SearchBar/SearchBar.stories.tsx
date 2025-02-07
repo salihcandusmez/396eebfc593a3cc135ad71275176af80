@@ -16,7 +16,6 @@ type Story = StoryObj<typeof SearchBar>;
 
 export const Default: Story = {
   args: {
-    buttonText: "Search",
     placeholder: "Search...",
   },
 };

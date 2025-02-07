@@ -5,7 +5,7 @@ import { ISearchBar } from "./SearchBar.types";
 import SearchInput from "../SearchInput/SearchInput";
 import styles from "./SearchBar.module.scss";
 
-const SearchBar = ({ onSearch }: ISearchBar) => {
+const SearchBar = ({ onSearch, placeholder }: ISearchBar) => {
   const [query, setQuery] = useState("");
 
   const handleSearch = () => {
@@ -15,7 +15,7 @@ const SearchBar = ({ onSearch }: ISearchBar) => {
   return (
     <div className={styles["search-bar"]}>
       <SearchInput
-        placeholder="Search..."
+        placeholder={placeholder || "Search..."}
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
