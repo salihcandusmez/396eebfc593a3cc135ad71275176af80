@@ -3,7 +3,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 import { IProductListItem } from "@/components/ProductListItem/ProductListItem.types";
-import { getProducts } from "@/service/product.service";
+import { useProducts } from "@/hooks/useProducts";
 
 interface ProductContextType {
   products: IProductListItem[];
@@ -24,30 +24,17 @@ export const ProductProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [products, setProducts] = useState<IProductListItem[]>([]);
+  const { products, isPending } = useProducts();
   const [filteredProducts, setFilteredProducts] = useState<IProductListItem[]>(
     []
   );
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize] = useState(10);
   const [searchTerm, setSearchTerm] = useState("");
-  const [isLoading, setIsLoading] = useState(true); // İlk yükleme kontrolü
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true); // Veriler yüklenirken loading durumu
-      const data = await getProducts();
-      setProducts(data);
-      setFilteredProducts(data);
-      setIsLoading(false); // Veriler yüklendiğinde loading'i kapat
-    };
-
-    fetchData();
-  }, []);
 
   useEffect(() => {
     if (searchTerm) {
-      const filtered = products.filter((product) =>
+      const filtered = products.filter((product: IProductListItem) =>
         product.title.toLowerCase().includes(searchTerm.toLowerCase())
       );
       setFilteredProducts(filtered);
@@ -67,7 +54,7 @@ export const ProductProvider = ({
         currentPage,
         pageSize,
         total,
-        isLoading,
+        isLoading: isPending,
         searchTerm,
         setSearchTerm,
         setCurrentPage,
