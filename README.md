@@ -1,36 +1,159 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Next.js Project - 396eebfc593a3cc135ad71275176af80
 
-## Getting Started
+This is a **Next.js** project developed with TypeScript, React, and SCSS. It includes Storybook for UI component documentation and uses Vercel for deployment.
 
-First, run the development server:
+🔗 **Live Demo**: [396eebfc593a3cc135ad71275176af80.vercel.app](https://396eebfc593a3cc135ad71275176af80.vercel.app/)
+
+---
+
+## 📦 Technologies Used
+
+- **Next.js** 15.1.6
+- **React** 19.0.0
+- **TypeScript** 5
+- **SCSS**
+- **ESLint & Prettier** (Code Formatting & Linting)
+- **Storybook** 8.5.3 (Component Documentation)
+- **Axios** (HTTP Requests)
+- **rc-pagination** (Pagination Component)
+- **Vercel** (Deployment)
+
+---
+
+## 🛠️ Installation & Setup
+
+To set up the project locally, follow these steps:
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git
+cd YOUR_REPO_NAME
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+### 3️⃣ Set Node Version (Using NVM)
+
+This project uses **Node.js v22.11.0**. If you have **NVM** installed, you can set the correct version:
+
+```bash
+nvm use
+```
+
+or manually install:
+
+```bash
+nvm install v22.11.0
+nvm use v22.11.0
+```
+
+### 4️⃣ Set Up Environment Variables
+
+Create a `.env.local` file in the root directory and add the following:
+
+```env
+NEXT_PUBLIC_API_URL=your_api_url_here
+NEXT_PUBLIC_API_KEY=your_api_key_here
+```
+
+---
+
+## 📜 Available Scripts
+
+You can run the following commands:
+
+### 🏗 Development Mode
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Runs the Next.js development server at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🚀 Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+Builds the project and starts a production-ready server.
 
-To learn more about Next.js, take a look at the following resources:
+### ✅ Linting & Formatting
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run lint
+npm run format
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Checks the code for linting errors and formats it using **Prettier**.
 
-## Deploy on Vercel
+### 📖 Storybook (UI Component Documentation)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run storybook
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Starts **Storybook** at [http://localhost:6006](http://localhost:6006).
+
+To build Storybook for production:
+
+```bash
+npm run build-storybook
+```
+
+---
+
+## 🚀 Deployment on Vercel
+
+This project is deployed on **Vercel**. To manually deploy, run:
+
+```bash
+vercel --prod
+```
+
+If you want to push changes, make sure you have **Vercel CLI** installed:
+
+```bash
+npm install -g vercel
+vercel login
+vercel
+```
+
+---
+
+## 🔗 Useful Links
+
+- 🔗 **Live App**: [396eebfc593a3cc135ad71275176af80.vercel.app](https://396eebfc593a3cc135ad71275176af80.vercel.app/)
+- 📚 **Next.js Documentation**: [https://nextjs.org/docs](https://nextjs.org/docs)
+- 🎨 **Storybook Documentation**: [https://storybook.js.org/docs](https://storybook.js.org/docs)
+- ⚡ **Vercel Deployment Guide**: [https://vercel.com/docs](https://vercel.com/docs)
+
+---
+
+## 📌 Contributing
+
+If you'd like to contribute:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-name`).
+3. Commit your changes (`git commit -m "Added new feature"`).
+4. Push to the branch (`git push origin feature-name`).
+5. Create a pull request.
+
+---
+
+## 📜 License
+
+This project is licensed under **MIT License**.
+
+---
